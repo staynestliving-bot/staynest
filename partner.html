@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StayNest Partner — List your PG or tiffin service</title>
+<meta name="description" content="List your PG or tiffin service on StayNest for free. Reach hundreds of students and professionals in Ahmedabad.">
+<meta name="theme-color" content="#085041">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%23085041'/><path d='M32 14L14 28V52H24V40H40V52H50V28L32 14Z' fill='white'/></svg>">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --teal: #1D9E75; --teal-dark: #085041; --teal-mid: #0F6E56;
+    --teal-light: #E1F5EE; --teal-soft: #9FE1CB;
+    --amber: #EF9F27; --amber-light: #FAEEDA; --amber-dark: #633806;
+    --gray-dark: #2C2C2A; --gray-mid: #5F5E5A; --gray-light: #F1EFE8;
+    --gray-border: #D3D1C7; --white: #ffffff; --cream: #FAFAF7;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; font-weight: 400; background: var(--cream); color: var(--gray-dark); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(8,80,65,0.96); backdrop-filter: blur(12px); z-index: 100; padding: 0 5%; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .nav-back { font-size: 13px; color: var(--teal-soft); text-decoration: none; font-weight: 500; display: flex; align-items: center; gap: 6px; }
+  .nav-back:hover { color: white; }
+
+  /* HERO */
+  .hero { background: var(--teal-dark); min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 100px 5% 60px; position: relative; overflow: hidden; }
+  .hero-bg { position: absolute; border-radius: 50%; background: var(--teal); opacity: 0.12; pointer-events: none; }
+  .hero-bg.c1 { width: 600px; height: 600px; top: -200px; right: -200px; }
+  .hero-bg.c2 { width: 400px; height: 400px; bottom: -100px; left: -150px; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(159,225,203,0.15); color: var(--teal-soft); font-size: 13px; font-weight: 500; padding: 5px 14px; border-radius: 20px; margin-bottom: 24px; border: 1px solid rgba(159,225,203,0.3); }
+  .hero-title { font-family: 'DM Serif Display', serif; font-weight: 400; font-size: clamp(36px, 6vw, 64px); color: white; line-height: 1.1; letter-spacing: -1px; margin-bottom: 16px; max-width: 700px; }
+  .hero-title em { font-style: italic; color: var(--teal-soft); }
+  .hero-sub { font-size: clamp(14px, 2vw, 17px); color: rgba(255,255,255,0.6); margin-bottom: 48px; font-weight: 300; max-width: 480px; line-height: 1.7; }
+
+  /* BENEFITS STRIP */
+  .benefits { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-bottom: 48px; }
+  .benefit { display: flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 20px; padding: 6px 14px; font-size: 13px; color: rgba(255,255,255,0.8); }
+  .benefit i { font-size: 14px; color: var(--teal-soft); }
+
+  /* FORM CARD */
+  .form-wrap { width: 100%; max-width: 480px; position: relative; z-index: 1; }
+  .form-card { background: white; border-radius: 24px; padding: 36px 32px; box-shadow: 0 24px 60px rgba(0,0,0,0.3); }
+  .form-title { font-size: 20px; font-weight: 600; color: var(--gray-dark); margin-bottom: 6px; }
+  .form-sub { font-size: 13px; color: var(--gray-mid); margin-bottom: 24px; line-height: 1.6; }
+  .form-group { margin-bottom: 14px; }
+  .form-group label { display: block; font-size: 12px; font-weight: 500; color: var(--gray-mid); margin-bottom: 5px; }
+  .form-group input, .form-group select { width: 100%; padding: 11px 14px; border: 1px solid var(--gray-border); border-radius: 10px; font-size: 14px; font-family: 'DM Sans', sans-serif; color: var(--gray-dark); background: var(--cream); outline: none; transition: border-color 0.15s; }
+  .form-group input:focus, .form-group select:focus { border-color: var(--teal); background: white; }
+  .submit-btn { width: 100%; padding: 14px; border: none; border-radius: 12px; font-size: 15px; font-weight: 600; font-family: 'DM Sans', sans-serif; cursor: pointer; margin-top: 4px; background: var(--teal-dark); color: white; transition: background 0.15s; display: flex; align-items: center; justify-content: center; gap: 8px; }
+  .submit-btn:hover { background: var(--teal-mid); }
+  .card-note { font-size: 11px; color: var(--gray-mid); text-align: center; margin-top: 12px; }
+
+  /* SUCCESS */
+  .success-state { display: none; flex-direction: column; align-items: center; text-align: center; padding: 24px 0; }
+  .success-icon { width: 64px; height: 64px; border-radius: 50%; background: var(--teal-light); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+  .success-icon i { font-size: 28px; color: var(--teal); }
+  .success-title { font-size: 20px; font-weight: 600; color: var(--teal-dark); margin-bottom: 8px; }
+  .success-sub { font-size: 13px; color: var(--gray-mid); line-height: 1.7; }
+
+  /* WHY LIST */
+  .why-section { padding: 80px 5%; background: var(--white); }
+  .section-tag { display: inline-block; background: var(--teal-light); color: var(--teal-mid); font-size: 12px; font-weight: 500; padding: 4px 12px; border-radius: 20px; margin-bottom: 12px; }
+  .section-title { font-family: 'DM Serif Display', serif; font-weight: 400; font-size: clamp(26px, 4vw, 38px); color: var(--teal-dark); margin-bottom: 8px; line-height: 1.2; }
+  .section-sub { font-size: 15px; color: var(--gray-mid); max-width: 480px; line-height: 1.7; margin-bottom: 48px; }
+  .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+  .why-card { background: var(--cream); border: 1px solid var(--gray-border); border-radius: 16px; padding: 24px 20px; transition: border-color 0.2s; }
+  .why-card:hover { border-color: var(--teal-soft); }
+  .why-icon { width: 44px; height: 44px; border-radius: 12px; background: var(--teal-light); display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+  .why-icon i { font-size: 20px; color: var(--teal); }
+  .why-title { font-size: 14px; font-weight: 600; color: var(--gray-dark); margin-bottom: 6px; }
+  .why-body { font-size: 13px; color: var(--gray-mid); line-height: 1.7; }
+
+  /* WHO CAN LIST */
+  .who-section { padding: 80px 5%; background: var(--teal-dark); }
+  .who-section .section-title { color: white; }
+  .who-section .section-tag { background: rgba(159,225,203,0.15); color: var(--teal-soft); }
+  .who-section .section-sub { color: rgba(255,255,255,0.5); }
+  .who-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+  .who-card { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 22px 18px; }
+  .who-card-icon { font-size: 24px; color: var(--teal-soft); margin-bottom: 10px; }
+  .who-card-title { font-size: 14px; font-weight: 500; color: white; margin-bottom: 4px; }
+  .who-card-body { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.6; }
+
+  /* FOOTER */
+  footer { background: var(--gray-dark); color: rgba(255,255,255,0.5); padding: 32px 5%; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-size: 13px; }
+
+  /* WA FLOAT */
+  .wa-float { position: fixed; bottom: 28px; right: 28px; width: 52px; height: 52px; border-radius: 50%; background: #25D366; color: white; display: flex; align-items: center; justify-content: center; font-size: 24px; text-decoration: none; box-shadow: 0 4px 16px rgba(37,211,102,0.4); z-index: 200; transition: transform 0.2s; }
+  .wa-float:hover { transform: scale(1.08); }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  .hero-badge { animation: fadeUp 0.5s ease both; }
+  .hero-title { animation: fadeUp 0.5s 0.1s ease both; }
+  .hero-sub { animation: fadeUp 0.5s 0.2s ease both; }
+  .benefits { animation: fadeUp 0.5s 0.25s ease both; }
+  .form-wrap { animation: fadeUp 0.5s 0.35s ease both; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <svg width="120" height="36" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg" aria-label="StayNest">
+      <rect x="1" y="9" width="40" height="40" rx="9" fill="none" stroke="#9FE1CB" stroke-width="1.8"/>
+      <path d="M21 16L9 26V44H16V34H26V44H33V26L21 16Z" fill="#9FE1CB"/>
+      <text x="50" y="38" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="26" font-weight="300" letter-spacing="-0.5" fill="white">Stay<tspan font-weight="700" fill="#9FE1CB">Nest</tspan></text>
+    </svg>
+  </a>
+
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg c1"></div>
+  <div class="hero-bg c2"></div>
+
+  <div class="hero-badge">
+    <i class="ti ti-star" aria-hidden="true"></i>
+    Free for first 3 months
+  </div>
+
+  <h1 class="hero-title">
+    Grow your business.<br><em>We bring the tenants.</em>
+  </h1>
+  <p class="hero-sub">List your PG or tiffin service on StayNest — reach hundreds of students and professionals in Ahmedabad. Zero commission to start.</p>
+
+  <div class="benefits">
+    <div class="benefit"><i class="ti ti-currency-rupee" aria-hidden="true"></i> Zero commission — 3 months</div>
+    <div class="benefit"><i class="ti ti-users" aria-hidden="true"></i> Direct tenant connects</div>
+    <div class="benefit"><i class="ti ti-shield-check" aria-hidden="true"></i> Verified listing badge</div>
+    <div class="benefit"><i class="ti ti-phone-call" aria-hidden="true"></i> We call you within 24hrs</div>
+  </div>
+
+  <div class="form-wrap" id="signup">
+    <div class="form-card">
+      <div id="owner-form">
+        <div class="form-title">Register your listing</div>
+        <div class="form-sub">Fill this form — our team will WhatsApp you within 24 hours to set everything up.</div>
+        <div class="form-group">
+          <label>Your name</label>
+          <input type="text" id="o-name" placeholder="Rameshbhai Patel" />
+        </div>
+        <div class="form-group">
+          <label>WhatsApp number</label>
+          <input type="tel" id="o-phone" placeholder="98765 43210" />
+        </div>
+        <div class="form-group">
+          <label>Area / locality in Ahmedabad</label>
+          <input type="text" id="o-area" placeholder="Navrangpura, Satellite, Maninagar..." />
+        </div>
+        <div class="form-group">
+          <label>What do you want to list?</label>
+          <select id="o-type">
+            <option value="">Select...</option>
+            <option>PG (boys)</option>
+            <option>PG (girls)</option>
+            <option>PG (co-ed)</option>
+            <option>Tiffin service</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Number of rooms / capacity</label>
+          <input type="text" id="o-capacity" placeholder="e.g. 10 rooms, 20 seats..." />
+        </div>
+        <button class="submit-btn" onclick="submitOwner()">
+          <i class="ti ti-list-check" aria-hidden="true"></i> Register for free
+        </button>
+        <p class="card-note">Free for first 3 months · No hidden charges · We'll call you</p>
+      </div>
+      <div class="success-state" id="owner-success">
+        <div class="success-icon"><i class="ti ti-check" aria-hidden="true"></i></div>
+        <div class="success-title">Registered successfully!</div>
+        <div class="success-sub">Our team will WhatsApp you on the number you provided within 24 hours to set up your listing. Welcome to StayNest!</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY LIST -->
+<section class="why-section">
+  <div class="section-tag">Why StayNest</div>
+  <h2 class="section-title">More tenants.<br>Less effort.</h2>
+  <p class="section-sub">Stop depending on brokers and word of mouth. StayNest brings verified, serious tenants directly to you.</p>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon"><i class="ti ti-currency-rupee" aria-hidden="true"></i></div>
+      <div class="why-title">Zero commission — 3 months</div>
+      <div class="why-body">List for free and get tenants with no commission for the first 3 months. No risk, all reward.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon"><i class="ti ti-bell" aria-hidden="true"></i></div>
+      <div class="why-title">Auto rent reminders</div>
+      <div class="why-body">StayNest sends automatic rent reminders to tenants on your behalf. No awkward follow-ups.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon"><i class="ti ti-layout-dashboard" aria-hidden="true"></i></div>
+      <div class="why-title">Simple dashboard</div>
+      <div class="why-body">See all your rooms, payments, and bookings in one place. Know exactly what's occupied and what's vacant.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon"><i class="ti ti-shield-check" aria-hidden="true"></i></div>
+      <div class="why-title">Verified badge</div>
+      <div class="why-body">Get a verified badge on your listing. Students and parents trust verified properties more.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon"><i class="ti ti-users" aria-hidden="true"></i></div>
+      <div class="why-title">Waitlist feature</div>
+      <div class="why-body">When a room is vacant, interested students are automatically notified. Rooms fill faster.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon"><i class="ti ti-device-mobile" aria-hidden="true"></i></div>
+      <div class="why-title">Secure payments</div>
+      <div class="why-body">All rent collected through StayNest. No cash, no UPI disputes. Money directly to your account.</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO CAN LIST -->
+<section class="who-section">
+  <div class="section-tag">Who can list</div>
+  <h2 class="section-title">Open to all providers</h2>
+  <p class="section-sub">Whether you have 5 rooms or 50 — StayNest works for you.</p>
+  <div class="who-grid">
+    <div class="who-card">
+      <div class="who-card-icon"><i class="ti ti-building" aria-hidden="true"></i></div>
+      <div class="who-card-title">PG owners (boys)</div>
+      <div class="who-card-body">Single or double sharing, AC or non-AC — all types welcome.</div>
+    </div>
+    <div class="who-card">
+      <div class="who-card-icon"><i class="ti ti-building" aria-hidden="true"></i></div>
+      <div class="who-card-title">PG owners (girls)</div>
+      <div class="who-card-body">Safe, verified listings for girls. Parents trust StayNest-verified properties.</div>
+    </div>
+    <div class="who-card">
+      <div class="who-card-icon"><i class="ti ti-building" aria-hidden="true"></i></div>
+      <div class="who-card-title">PG owners (co-ed)</div>
+      <div class="who-card-body">Separate floors or wings — list your co-ed property with clear details.</div>
+    </div>
+    <div class="who-card">
+      <div class="who-card-icon"><i class="ti ti-bowl" aria-hidden="true"></i></div>
+      <div class="who-card-title">Tiffin providers</div>
+      <div class="who-card-body">Home cooks, dabbawalas, small kitchens — reach students who need daily meals.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-section" style="background: var(--teal); padding: 72px 5%; text-align: center;">
+  <h2 class="cta-title" style="font-family: 'DM Serif Display', serif; font-weight:400; font-size: clamp(28px, 4vw, 44px); color: white; margin-bottom: 10px; line-height: 1.2;">
+    Ready to grow<br>your business?
+  </h2>
+  <p style="color: rgba(255,255,255,0.7); font-size: 15px; margin-bottom: 32px; font-weight: 300;">
+    Join StayNest — free for first 3 months. No broker. No commission.
+  </p>
+  <a href="#signup" style="background: white; color: var(--teal-dark); padding: 14px 36px; border-radius: 12px; font-size: 16px; font-weight: 500; text-decoration: none; display: inline-block; font-family: 'DM Sans', sans-serif;">
+    Register for free →
+  </a>
+</section>
+
+<footer>
+  <div>
+    <svg width="110" height="34" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg" aria-label="StayNest">
+      <rect x="1" y="9" width="40" height="40" rx="9" fill="none" stroke="#9FE1CB" stroke-width="1.8"/>
+      <path d="M21 16L9 26V44H16V34H26V44H33V26L21 16Z" fill="#9FE1CB"/>
+      <text x="50" y="38" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="26" font-weight="300" letter-spacing="-0.5" fill="white">Stay<tspan font-weight="700" fill="#9FE1CB">Nest</tspan></text>
+    </svg>
+  </div>
+  <div>Partner Portal · List your PG or tiffin</div>
+  <div>© 2026 StayNest · Ahmedabad, India</div>
+</footer>
+
+<a href="https://wa.me/918200796295?text=Hi%2C+I+want+to+list+my+PG+on+StayNest!" class="wa-float" target="_blank" aria-label="Contact on WhatsApp">
+  <i class="ti ti-brand-whatsapp" aria-hidden="true"></i>
+</a>
+
+<script>
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz9NKAkXDrpJwcrvXk_z2yiKDbs0rKGLKpdt50PpRAZnBG_W9j874s4_Wveo2H0nirK/exec';
+
+  function submitOwner() {
+    const name     = document.getElementById('o-name').value.trim();
+    const phone    = document.getElementById('o-phone').value.trim();
+    const area     = document.getElementById('o-area').value.trim();
+    const type     = document.getElementById('o-type').value;
+    const capacity = document.getElementById('o-capacity').value.trim();
+    if (!name || !phone) { alert('Please enter your name and WhatsApp number.'); return; }
+    if (!type) { alert('Please select what you want to list.'); return; }
+    fetch(SCRIPT_URL, {
+      method: 'POST', mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ type: 'Owner - ' + type, name, phone, area, need: type + (capacity ? ' | ' + capacity : ''), source: 'partner-page' })
+    }).catch(() => {});
+    document.getElementById('owner-form').style.display = 'none';
+    document.getElementById('owner-success').style.display = 'flex';
+  }
+
+  document.querySelectorAll('a[href="#signup"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      document.getElementById('signup').scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+</body>
+</html>
